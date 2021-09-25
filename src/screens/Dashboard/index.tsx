@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { useRef, useState } from 'react';
-import { TextInput } from 'react-native';
+import { Alert, TextInput } from 'react-native';
 
 import { Background } from '../../components/Background';
 import { Card } from '../../components/Card';
@@ -27,12 +27,13 @@ export function Dashboard() {
   const { addRepository, repositories } = useRepositories();
 
   function handleAddRepository() {
-    /**
-     * TODO: 
-     * - call addRepository function sending inputText value;
-     * - clean inputText value.
-     */
-    inputRef.current?.blur();
+    
+    try {
+      
+    } catch (error) {
+      Alert.alert('Erro', 'Ocorreu um erro no servidor, tente novamente');
+    }
+    
   }
 
   function handleRepositoryPageNavigation(id: number) {
